@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Marcus&#39;s成長日誌</title>
   
+  <subtitle>Confidence id the master of fate.</subtitle>
+  <link href="https://blog.marcuschen.cc/atom.xml" rel="self"/>
   
-  <link href="http://example.com/atom.xml" rel="self"/>
-  
-  <link href="http://example.com/"/>
+  <link href="https://blog.marcuschen.cc/"/>
   <updated>2021-01-03T11:46:30.502Z</updated>
-  <id>http://example.com/</id>
+  <id>https://blog.marcuschen.cc/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Marcus Chen</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/01/03/hello-world/"/>
-    <id>http://example.com/2021/01/03/hello-world/</id>
+    <link href="https://blog.marcuschen.cc/2021/01/03/hello-world/"/>
+    <id>https://blog.marcuschen.cc/2021/01/03/hello-world/</id>
     <published>2021-01-03T11:46:30.501Z</published>
     <updated>2021-01-03T11:46:30.502Z</updated>
     
