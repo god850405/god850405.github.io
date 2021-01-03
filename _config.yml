@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: Marcus's成長日誌
+subtitle: 'Confidence id the master of fate.'
+description: '記錄自己學習各式程式語言的過程，也順便和大家分享自己的經驗'
 keywords:
-author: John Doe
-language: en
+author: Marcus Chen
+language: zh-TW
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://blog.marcuschen.cc
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
