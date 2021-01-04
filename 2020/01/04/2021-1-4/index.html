@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Vuejs、.NET5.0佈署 | Marcus&#39;s成長日誌</title>
+  <meta name="description" content="大略一個月前開始學習前後端分離，分別接觸Vuejs和.NET5.0，由於是第一次接觸Vuejs加上Vuejs的入門門檻比較高，在剛開始學的過程滿噩夢的，可在經過一段時間琢磨後，開始悟到Vuejs的強大及便利。第一篇文章想說整理並記錄下學習佈署的過程中遇到的一些瓶頸。 ↓ 先讓我們來看看很陽春的專案結果:sweat_smile:ShopDemo ##Vuejs GitPage 佈署備註：還沒有 Gi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vuejs、.NET5.0佈署">
+<meta property="og:url" content="https://blog.marcuschen.cc/2020/01/04/2021-1-4/index.html">
+<meta property="og:site_name" content="Marcus&#39;s成長日誌">
+<meta property="og:description" content="大略一個月前開始學習前後端分離，分別接觸Vuejs和.NET5.0，由於是第一次接觸Vuejs加上Vuejs的入門門檻比較高，在剛開始學的過程滿噩夢的，可在經過一段時間琢磨後，開始悟到Vuejs的強大及便利。第一篇文章想說整理並記錄下學習佈署的過程中遇到的一些瓶頸。 ↓ 先讓我們來看看很陽春的專案結果:sweat_smile:ShopDemo ##Vuejs GitPage 佈署備註：還沒有 Gi">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-01-04T08:44:44.000Z">
+<meta property="article:modified_time" content="2021-01-04T08:50:51.740Z">
+<meta property="article:author" content="Marcus Chen">
+<meta property="article:tag" content="Vuejs">
+<meta property="article:tag" content=".NET5.0">
+<meta property="article:tag" content="IIS">
+<meta property="article:tag" content="SSL">
+<meta property="article:tag" content="GitPage">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.marcuschen.cc/2020/01/04/2021-1-4/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Marcus&#39;s成長日誌" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
+  
+  
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/god850405" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Marcus Chen</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Information Engineer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Yunlin, Taiwan</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什麼..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">主頁</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">歸檔</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分類</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">標籤</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">項目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">書單</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友鏈</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">關於</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/god850405" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.facebook.com/zihcian0405" target="_blank" title="Facebook" data-toggle=tooltip data-placement=top><i class="icon icon-facebook"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>歡迎交流與經驗分享!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分類</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BD%88%E7%BD%B2%E8%A8%AD%E5%AE%9A/">佈署設定</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET5-0/" rel="tag">.NET5.0</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitPage/" rel="tag">GitPage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSL/" rel="tag">SSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuejs/" rel="tag">Vuejs</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/NET5-0/" style="font-size: 13px;">.NET5.0</a> <a href="/tags/GitPage/" style="font-size: 13px;">GitPage</a> <a href="/tags/IIS/" style="font-size: 13px;">IIS</a> <a href="/tags/SSL/" style="font-size: 13px;">SSL</a> <a href="/tags/Vuejs/" style="font-size: 13px;">Vuejs</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">歸檔</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E4%BD%88%E7%BD%B2%E8%A8%AD%E5%AE%9A/">佈署設定</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/01/04/2021-1-4/" class="title">Vuejs、.NET5.0佈署</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-01-04T08:44:44.000Z" itemprop="datePublished">2020-01-04</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-2021-1-4" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vuejs、.NET5.0佈署
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/01/04/2021-1-4/" class="article-date">
+	  <time datetime="2020-01-04T08:44:44.000Z" itemprop="datePublished">2020-01-04</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E4%BD%88%E7%BD%B2%E8%A8%AD%E5%AE%9A/">佈署設定</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/NET5-0/" rel="tag">.NET5.0</a>, <a class="article-tag-link-link" href="/tags/GitPage/" rel="tag">GitPage</a>, <a class="article-tag-link-link" href="/tags/IIS/" rel="tag">IIS</a>, <a class="article-tag-link-link" href="/tags/SSL/" rel="tag">SSL</a>, <a class="article-tag-link-link" href="/tags/Vuejs/" rel="tag">Vuejs</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/01/04/2021-1-4/#comments" class="article-comment-link">評論</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>大略一個月前開始學習前後端分離，分別接觸<a target="_blank" rel="noopener" href="https://vuejs.org/">Vuejs</a>和<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/dotnet/core/dotnet-five">.NET5.0</a>，由於是第一次接觸<a target="_blank" rel="noopener" href="https://vuejs.org/">Vuejs</a>加上<a target="_blank" rel="noopener" href="https://vuejs.org/">Vuejs</a>的入門門檻比較高，在剛開始學的過程滿噩夢的，可在經過一段時間琢磨後，開始悟到<a target="_blank" rel="noopener" href="https://vuejs.org/">Vuejs</a>的強大及便利。第一篇文章想說整理並記錄下學習佈署的過程中遇到的一些瓶頸。</p>
+<p>↓ 先讓我們來看看很陽春的專案結果:sweat_smile:<br><strong><a target="_blank" rel="noopener" href="https://shop.marcuschen.cc/">ShopDemo</a></strong></p>
+<p>##Vuejs GitPage 佈署<br><em>備註：還沒有 GitHub 帳號的話，必需要先去**<a target="_blank" rel="noopener" href="https://github.com/">Github</a><strong>申請一個帳號並開啟一個新的</strong>repository**</em></p>
+<p>由於小弟是第一次用<a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>，因此在捉摸上也花了不少時間!後來才發現原來官網就有範例了! ####安裝 Git 之後，執行下列語法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 建構</span><br><span class="line">npm run build</span><br><span class="line"># cd 到建構输出的目录下</span><br><span class="line">cd dist</span><br><span class="line"># 部署到自訂義域的域名</span><br><span class="line"># echo &#39;自訂義域的域名&#39; &gt; CNAME</span><br><span class="line">git init</span><br><span class="line">git add -A</span><br><span class="line">git commit -m &#39;版本資訊&#39;</span><br><span class="line"># 部署到 https:&#x2F;&#x2F;&lt;USERNAME&gt;.github.io</span><br><span class="line"># git push -f git@github.com:&lt;USERNAME&gt;&#x2F;&lt;USERNAME&gt;.github.io.git master</span><br><span class="line"></span><br><span class="line"># 部署到 https:&#x2F;&#x2F;&lt;USERNAME&gt;.github.io&#x2F;&lt;REPO&gt;</span><br><span class="line"># git push -f git@github.com:&lt;USERNAME&gt;&#x2F;&lt;REPO&gt;.git master:gh-pages</span><br></pre></td></tr></table></figure>
+<p>##.NET5.0 IIS 佈署<br><em>備註：還沒有安裝 IIS 的話，必需要先去**<a target="_blank" rel="noopener" href="https://melayogu.pixnet.net/blog/post/132694142-%5Biis%5D-win10-%E5%AE%89%E8%A3%9Diis">安裝 IIS</a>**</em></p>
+<p>後端我是使用.NET5.0 來建立，礙於版本太新了，網路上沒有什麼範例資料可以參考，於是搞了很久，終於找到成功架設的方法。</p>
+<blockquote>
+<p>專案 (右鍵) → 發佈 → 目標「資料夾」→ 輸出路徑 A 專案上右鍵 → 發佈 → 目標「資料夾」→ 輸出路徑 A → 發佈</p>
+</blockquote>
+<ul>
+<li>目標 Framework ：net5.0</li>
+<li>佈署模式 ：Framework 依存性</li>
+<li>目標執行階段 ：可攜式</li>
+</ul>
+<h4 id="IIS-設定"><a href="#IIS-設定" class="headerlink" title="IIS 設定"></a>IIS 設定</h4><blockquote>
+<p>應用程式集區 → 新增應用程式集區</p>
+</blockquote>
+<ul>
+<li>名稱 ：<strong>名稱 B</strong></li>
+<li>.NETCLR 版本 ：<strong>沒有受控碼</strong></li>
+<li>受控管線模式 ：<strong>整合式</strong></li>
+<li>立即啟用應用程式集區 ：<strong>√</strong><blockquote>
+<p>站台 (右鍵) → 新增網站 → 確定</p>
+</blockquote>
+</li>
+<li>站台名稱 ：<strong>網站名稱 C</strong></li>
+<li>應用程式集區 ：<strong>*名稱 B ( 剛剛新增的應用程式集區 )</strong></li>
+<li>實體路徑 ：<strong>輸出路徑 A ( 上面發佈指定的路徑 )</strong></li>
+<li>繫結 ：<strong>輸入你電腦閒置的連接埠 ( 其他內容先不做設定，等 SSL 憑證申請完再來修改 )</strong></li>
+</ul>
+<blockquote>
+<p>再來點選<strong>網站名稱 C</strong>裡的<strong>模組</strong></p>
+</blockquote>
+<ul>
+<li>檢查是否有安裝*<em><a target="_blank" rel="noopener" href="https://dotnet.microsoft.com/permalink/dotnetcore-current-windows-runtime-bundle-installer">AspNetCoreModuleV2</a>**</em></li>
+</ul>
+<p>接下來就可以嘗試瀏覽你建立的網站了，如果程式碼確定無誤還是無法正常連線，可以嘗試檢查<strong>輸出路徑 A</strong>下的<strong>web.config</strong>有沒有設定好</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">location</span> <span class="attr">path</span>=<span class="string">&quot;.&quot;</span> <span class="attr">inheritInChildApplications</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">handlers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">&quot;專案名稱&quot;</span> <span class="attr">path</span>=<span class="string">&quot;*&quot;</span> <span class="attr">verb</span>=<span class="string">&quot;*&quot;</span> <span class="attr">modules</span>=<span class="string">&quot;AspNetCoreModuleV2&quot;</span> <span class="attr">resourceType</span>=<span class="string">&quot;Unspecified&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">handlers</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">aspNetCore</span> <span class="attr">processPath</span>=<span class="string">&quot;dotnet&quot;</span> <span class="attr">arguments</span>=<span class="string">&quot;.\專案名稱.dll&quot;</span> <span class="attr">stdoutLogEnabled</span>=<span class="string">&quot;false&quot;</span> <span class="attr">stdoutLogFile</span>=<span class="string">&quot;.\logs\stdout&quot;</span> <span class="attr">hostingModel</span>=<span class="string">&quot;inprocess&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">location</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>##想讓別人可以連到你的網站</p>
+<ul>
+<li><strong>擁有乙個固定 IP</strong> <a target="_blank" rel="noopener" href="https://free.com.tw/hinet-static-ip/">中華電信 HiNet 固定 IP 申請教學</a></li>
+<li><strong>設定好固定 IP</strong> <a target="_blank" rel="noopener" href="https://andy6804tw.github.io/2019/09/09/win-static-ip/">設定教學</a></li>
+<li><strong>防火牆增加輸入規則你網站使用的埠號</strong> <a target="_blank" rel="noopener" href="https://wiki.mcneel.com/zh-tw/zoo/window7firewall">從 Windows 防火牆開啟 TCP Port 80</a></li>
+<li>如果網路連線非 PPPoE 撥接，可能還需要設定**<a target="_blank" rel="noopener" href="https://wiki.mcneel.com/zh-tw/zoo/window7firewall">[通訊埠轉發Port Forwarding]</a>** ##網站加上 SSL 憑證(https) ######<a target="_blank" rel="noopener" href="https://www.sslforfree.com/">免費 SSL 申請</a> (需要擁有自己的網域)<br>申請的方式其實很簡單我就大概解釋流程，</li>
+<li>輸入你的網域後按申請</li>
+<li>辦會員後</li>
+<li>免費的方案就什麼功能都不要選</li>
+<li>選 90 天驗證一次就免費了</li>
+<li>驗證網域是你的後</li>
+<li>就可以下載一個壓縮檔下來</li>
+</ul>
+<p>裡面會有三個檔案，這裡我們只需要 <strong>名稱 A.crt</strong> 和 <strong>名稱 B.key</strong>檔案 !<br>因為 IIS 只支援 pfx 檔<br>所以我們還需要下載<a target="_blank" rel="noopener" href="http://gnuwin32.sourceforge.net/packages/openssl.htm">OpenSSL for Windows - GnuWin32</a>來幫忙轉檔</p>
+<ul>
+<li>安裝<a target="_blank" rel="noopener" href="http://gnuwin32.sourceforge.net/packages/openssl.htm">OpenSSL for Windows - GnuWin32</a></li>
+<li>接著將剛剛壓縮檔裡的 .crt 與 .key 檔複製到 OpenSSL 內 bin 資料夾<br>預設路徑是 C:\Program Files (x86)\GnuWin32\bin</li>
+<li>以<strong>以系統管理員身分</strong>開啟<strong>命令提示字元</strong></li>
+<li>切換路徑至 C:\Program Files (x86)\GnuWin32\bin</li>
+<li>cd C:\Program Files (x86)\GnuWin32\bin</li>
+<li>輸入指令</li>
+<li>openssl pkcs12 -export -out <strong>自訂義 pfx 輸出的名稱.pfx</strong> -inkey <strong>名稱 B.key</strong> -in <strong>名稱 A.crt</strong></li>
+<li>輸入兩次設定的密碼</li>
+<li>成功後就可以在目錄 C:\Program Files (x86)\GnuWin32\bin 下看到<strong>自訂義 pfx 輸出的名稱.pfx</strong>這個檔案</li>
+</ul>
+<p>##IIS SSL 憑證安裝</p>
+<blockquote>
+<p>點選連線裡的跟目錄 (你的使用者名稱) → 點選伺服器憑證 → 匯入 → 確定</p>
+</blockquote>
+<ul>
+<li>憑證檔案 ：<strong><em>選取剛輸出的 pfx 檔案</em></strong></li>
+<li>密碼 ： <strong>上面設定 pfx 的密碼</strong></li>
+<li>選取憑證儲存區 ：<strong>個人</strong></li>
+<li>允許匯出此憑證 ：<strong>√</strong><blockquote>
+<p>點選新增的網站 → 繫結 → 新增 → 確定 → 關閉 → 重啟</p>
+</blockquote>
+</li>
+<li>類型 ：<strong>https</strong></li>
+<li>IP 位址 ：<strong>你的 local ip</strong></li>
+<li>連接埠 ：<strong>443</strong></li>
+<li>主機名稱 ：<strong>上面申請網域的主機</strong></li>
+<li>SSL 憑證 ：<strong>選取剛剛匯入的憑證</strong></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://blog.marcuschen.cc/2020/01/04/2021-1-4/" title="Vuejs、.NET5.0佈署" target="_blank" rel="external">https://blog.marcuschen.cc/2020/01/04/2021-1-4/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/god850405" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/god850405" target="_blank"><span class="text-dark">Marcus Chen</span><small class="ml-1x">Information Engineer</small></a></h3>
+        <div>菜鳥資訊工程師，對程式設計有著極大熱忱。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/god850405" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.facebook.com/zihcian0405" target="_blank" title="Facebook" data-toggle=tooltip data-placement=top><i class="icon icon-facebook"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+<script src="//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'Vuejs、.NET5.0佈署', 
+  owner: 'god850405', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'god850405.github.io',
+  oauth: {
+    client_id: 'dcea1179a15b0ae0fef9',
+    client_secret: '70292ab13c336bf20b29f3dc9ab2fd156dd1c379',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
