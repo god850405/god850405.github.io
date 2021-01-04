@@ -21,14 +21,14 @@
   <meta name="description" content="記錄自己學習各式程式語言的過程，也順便和大家分享自己的經驗">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marcus&#39;s成長日誌">
-<meta property="og:url" content="https://blog.marcuschen.cc/index.html">
+<meta property="og:url" content="https://marcuschen.cc/index.html">
 <meta property="og:site_name" content="Marcus&#39;s成長日誌">
 <meta property="og:description" content="記錄自己學習各式程式語言的過程，也順便和大家分享自己的經驗">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:author" content="Marcus Chen">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://blog.marcuschen.cc/index.html">
+  <link rel="canonical" href="https://marcuschen.cc/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Marcus&#39;s成長日誌" type="application/atom+xml">
   
@@ -64,7 +64,7 @@
 
     <form class="search-form sidebar-form">
         <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <input type="text" class="search-form-input form-control" placeholder="搜尋" />
             <span class="input-group-btn">
                 <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
             </span>
@@ -161,7 +161,7 @@
             
             <i class="icon icon-friendship"></i>
             
-            <span class="menu-title">友鏈</span>
+            <span class="menu-title">連結</span>
           </a>
         </li>
         
@@ -319,10 +319,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/01/04/2021-1-4/#comments" class="article-comment-link">評論</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.3k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字數统计: 1.3k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">閱讀時間: 5(分)</span>
 	
 
       </div>
@@ -356,7 +356,7 @@
 </blockquote>
 </li>
 <li>站台名稱 ：<strong>網站名稱 C</strong></li>
-<li>應用程式集區 ：<strong>*名稱 B ( 剛剛新增的應用程式集區 )</strong></li>
+<li>應用程式集區 ：<strong>名稱 B ( 剛剛新增的應用程式集區 )</strong></li>
 <li>實體路徑 ：<strong>輸出路徑 A ( 上面發佈指定的路徑 )</strong></li>
 <li>繫結 ：<strong>輸入你電腦閒置的連接埠 ( 其他內容先不做設定，等 SSL 憑證申請完再來修改 )</strong></li>
 </ul>
@@ -364,7 +364,7 @@
 <p>再來點選<strong>網站名稱 C</strong>裡的<strong>模組</strong></p>
 </blockquote>
 <ul>
-<li>檢查是否有安裝*<em><a target="_blank" rel="noopener" href="https://dotnet.microsoft.com/permalink/dotnetcore-current-windows-runtime-bundle-installer">AspNetCoreModuleV2</a>**</em></li>
+<li>檢查是否有安裝 <strong><a target="_blank" rel="noopener" href="https://dotnet.microsoft.com/permalink/dotnetcore-current-windows-runtime-bundle-installer">AspNetCoreModuleV2</a></strong></li>
 </ul>
 <p>接下來就可以嘗試瀏覽你建立的網站了，如果程式碼確定無誤還是無法正常連線，可以嘗試檢查<strong>輸出路徑 A</strong>下的 <strong>web.config</strong>有沒有設定好</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">location</span> <span class="attr">path</span>=<span class="string">&quot;.&quot;</span> <span class="attr">inheritInChildApplications</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">handlers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">&quot;專案名稱&quot;</span> <span class="attr">path</span>=<span class="string">&quot;*&quot;</span> <span class="attr">verb</span>=<span class="string">&quot;*&quot;</span> <span class="attr">modules</span>=<span class="string">&quot;AspNetCoreModuleV2&quot;</span> <span class="attr">resourceType</span>=<span class="string">&quot;Unspecified&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">handlers</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">aspNetCore</span> <span class="attr">processPath</span>=<span class="string">&quot;dotnet&quot;</span> <span class="attr">arguments</span>=<span class="string">&quot;.\專案名稱.dll&quot;</span> <span class="attr">stdoutLogEnabled</span>=<span class="string">&quot;false&quot;</span> <span class="attr">stdoutLogFile</span>=<span class="string">&quot;.\logs\stdout&quot;</span> <span class="attr">hostingModel</span>=<span class="string">&quot;inprocess&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">location</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -374,7 +374,7 @@
 <li><strong>防火牆增加輸入規則你網站使用的埠號</strong> <a target="_blank" rel="noopener" href="https://wiki.mcneel.com/zh-tw/zoo/window7firewall">從 Windows 防火牆開啟 TCP Port 80</a></li>
 <li>如果網路連線非 PPPoE 撥接，可能還需要設定 <strong><a target="_blank" rel="noopener" href="https://wiki.mcneel.com/zh-tw/zoo/window7firewall">[通訊埠轉發Port Forwarding]</a></strong></li>
 </ul>
-<h2 id="網站加上-SSL-憑證-https"><a href="#網站加上-SSL-憑證-https" class="headerlink" title="網站加上 SSL 憑證(https)"></a>網站加上 SSL 憑證(https)</h2><h6 id="免費-SSL-申請-需要擁有自己的網域"><a href="#免費-SSL-申請-需要擁有自己的網域" class="headerlink" title="免費 SSL 申請 (需要擁有自己的網域)"></a><a target="_blank" rel="noopener" href="https://www.sslforfree.com/">免費 SSL 申請</a> (需要擁有自己的網域)</h6><p>申請的方式其實很簡單我就大概解釋流程，</p>
+<h2 id="網站加上-SSL-憑證-https"><a href="#網站加上-SSL-憑證-https" class="headerlink" title="網站加上 SSL 憑證(https)"></a>網站加上 SSL 憑證(https)</h2><h4 id="免費-SSL-申請-需要擁有自己的網域"><a href="#免費-SSL-申請-需要擁有自己的網域" class="headerlink" title="免費 SSL 申請 (需要擁有自己的網域)"></a><a target="_blank" rel="noopener" href="https://www.sslforfree.com/">免費 SSL 申請</a> (需要擁有自己的網域)</h4><p>申請的方式其實很簡單我就大概解釋流程，</p>
 <ul>
 <li>輸入你的網域後按申請</li>
 <li>辦會員後</li>
@@ -420,12 +420,12 @@
   <ul class="post-copyright list-unstyled">
     
     <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="https://blog.marcuschen.cc/2020/01/04/2021-1-4/" title="Vuejs、.NET5.0佈署" target="_blank" rel="external">https://blog.marcuschen.cc/2020/01/04/2021-1-4/</a>
+      <strong>本文連結：</strong>
+      <a href="https://marcuschen.cc/2020/01/04/2021-1-4/" title="Vuejs、.NET5.0佈署" target="_blank" rel="external">https://marcuschen.cc/2020/01/04/2021-1-4/</a>
     </li>
     
     <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+      <strong>版權聲明： </strong> 本部落格所有文章除特别聲明外，均採用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN協議</a> 許可協議。轉載請著名出處！
     </li>
   </ul>
 </blockquote>
