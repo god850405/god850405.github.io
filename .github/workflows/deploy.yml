@@ -17,7 +17,30 @@ jobs:
           npm install
           npm run build
       - name: Deploy 🚀
+        - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.commit_secret }}
+          publish_branch: gh-pages
           publish_dir: ./public
+          force_orphan: true
+          cname: marcuschen.cc # 你的網域名稱，填寫此項便會自動建立 CNAME 檔案（注意：你必須將 DNS 記錄指向 GitHub Pages）
+        # run: |
+        #         cd ./public
+        #         echo '${YOUR_DOMAIN}' >> CNAME
+        #         git init
+        #         git config --local user.name ${YOUR_USER_NAME}
+        #         git config --local user.email ${YOUR_USER_EMAIL}
+        #         git status
+        #         git remote add origin https://${{secrets.DEPLOY_GITHUB_PAGE_SECRET}}@github.com/${YOUR_USER_NAME}/${YOUR_USER_NAME}.github.io.git
+        #         git checkout -b main
+        #         git add --all
+        #         git commit -m "Deploy to GitHub Pages by GitHub Actions"
+        #         git push origin main -f
+        #         echo 🤘 Deploy to GitHub Pages completed.              
+        # uses: peaceiris/actions-gh-pages@v3
+        # touch CNAME
+        # echo 'mydomain.com' > CNAME
+        # with:
+        #   github_token: ${{ secrets.commit_secret }}
+        #   publish_dir: ./public
