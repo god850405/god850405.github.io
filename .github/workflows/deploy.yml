@@ -1,89 +1,23 @@
-name: HEXO CI
-
+name: Build and Deploy
 on:
   push:
     branches:
-    - master
-
+      - master
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
-
     steps:
-      - uses: actions/checkout@v1
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Build 🔧
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Configuration environment
-        env:
-          HEXO_DEPLOY_PRI: ${{secrets.commit_secret}}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$HEXO_DEPLOY_PRI" | tr -d '\r' > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.name "marcus"
-          git config --global user.email "god850405@gmail.com"
-      - name: Install dependencies
-        run: |
-          npm i -g hexo-cli
-          npm i
-      - name: Deploy hexo
-        run: |
-          hexo generate && hexo deploy
-
-# name: Deploy gh-pages
-
-# on:
-#   push:
-#     branches:
-#       - master
-
-# jobs:
-#   build:
-#     name: Build and deploy gh-pages
-#     env:
-#       MY_SECRET   : ${{secrets.commit_secret}}
-#       PUBLISH_DIR : ./public
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node-version: [10.x]
-
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v1
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#     - uses: borales/actions-yarn@v2.0.0
-#       with:
-#         cmd: install # will run `yarn install` command
-#     - uses: borales/actions-yarn@v2.0.0
-#       with:
-#         cmd: build # will run `yarn build` command
-#     - name: Commit files
-#       run: |
-#         echo ${{secrets.DEPLOY_PASSWORD}} | sudo -S chown -R $USER:$USER $PUBLISH_DIR
-#         cd $PUBLISH_DIR
-#         git init
-#         git config --local user.email "action@github.com"
-#         git config --local user.name "GitHub Action"
-#         git status
-#         git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
-#         git checkout -b gh-pages
-#         git add --all
-#         git commit -m "deploy to Github pages"
-#     - name: Push changes
-#       uses: ad-m/github-push-action@master
-#       with:
-#         github_token: ${{ secrets.GITHUB_TOKEN }}
-#         branch: 'gh-pages'
-#         force: true
-#         directory: './public'
+          node-version: '10.x'
+      - run: |
+          npm install -g hexo-cli
+          npm install
+          npm run build
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.commit_secret }}
+          publish_dir: ./public
