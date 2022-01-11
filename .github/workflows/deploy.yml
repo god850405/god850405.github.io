@@ -24,4 +24,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./public
           force_orphan: true
-          cname: marcuschen.cc # 你的網域名稱，填寫此項便會自動建立 CNAME 檔案（注意：你必須將 DNS 記錄指向 GitHub Pages）
+          # cname: marcuschen.cc # 你的網域名稱，填寫此項便會自動建立 CNAME 檔案（注意：你必須將 DNS 記錄指向 GitHub Pages）
