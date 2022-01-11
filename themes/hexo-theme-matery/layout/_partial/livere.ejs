@@ -1,0 +1,21 @@
+<div class="livere-card card" data-aos="fade-up">
+    <!-- 來必力City版安裝代碼 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="<%- theme.livere.uid %>">
+        <script type="text/javascript">
+            (function(d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>為正常使用來必力評論功能請激活JavaScript。</noscript>
+    </div>
+    <!-- City版安裝代碼已完成 -->
+</div>
