@@ -287,8 +287,8 @@ gitalk:
   owner: god850405
   repo: god850405.github.io
   oauth:
-    clientId: ${{ secrets.CLIENTID }}
-    clientSecret: ${{ secrets.CLIENTSECRET }}
+    clientId: 246d1d2ce0a74f68070f
+    clientSecret: 285457752dcd85eb541752cfaaac866f819eda17
   admin: god850405
 
 # the Gitment config，default disabled
