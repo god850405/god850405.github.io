@@ -284,11 +284,11 @@ postCalendar: true
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
   enable: true
-  owner: Marcus
+  owner: god850405
   repo: god850405.github.io
   oauth:
-    clientId: 246d1d2ce0a74f68070f
-    clientSecret: 285457752dcd85eb541752cfaaac866f819eda17
+    clientId: ${{ secrets.CLIENTID }}
+    clientSecret: ${{ secrets.CLIENTSECRET }}
   admin: god850405
 
 # the Gitment config，default disabled
