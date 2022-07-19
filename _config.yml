@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Marcus's Blog 
-subtitle: '一位工程師在茫茫前後端中的學習紀錄。'
-description: '一位工程師在茫茫前後端中的學習紀錄。'
-keywords: Vue,Javascript,C#,HTML5,CSS,MSSQL,Git
+title: MarsBlog
+subtitle: '對於淩駕命運之上的人來說，信心就是生命的主宰。'
+description: 'For those above the fate, confidence is the master of life.'
+keywords: Vue,Javascript,C#,HTML5,CSS,MSSQL
 author: Marcus Chen
 language: zh-tw
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://god850405.github.io/
+url: https://blog.marstudio.tw/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
