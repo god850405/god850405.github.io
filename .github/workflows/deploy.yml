@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  build-and-deploy:
+  build-and-deploy-and-commit-sitemap:
     runs-on: ubuntu-latest
     steps:
       - name: Build 🔧
@@ -24,10 +24,6 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./public
           force_orphan: true
-          cname: blog.marstudio.tw # 你的網域名稱，填寫此項便會自動建立 CNAME 檔案（注意：你必須將 DNS 記錄指向 GitHub Pages）
-  submit:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Ping Google
-      run: curl https://www.google.com/ping?sitemap=https://blog.marstudio.tw/sitemap.xml
+          cname: blog.marstudio.tw # 你的網域名稱，填寫此項便會自動建立 CNAME 檔案（注意：你必須將 DNS 記錄指向 GitHub Pages）          
+      - name: Ping Google
+        run: curl https://www.google.com/ping?sitemap=https://blog.marstudio.tw/sitemap.xml
