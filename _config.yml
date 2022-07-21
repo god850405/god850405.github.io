@@ -105,9 +105,6 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: https://github.com/god850405/god850405.github.io
-  branch: master
 sitemap:
     path: sitemap.xml
     # template: ./sitemap_template.xml # 這行非必填，除非你想設定自訂的樣板
