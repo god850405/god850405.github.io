@@ -135,7 +135,7 @@ socialLink:
   github:  https://github.com/god850405
   email: god850405@gmail.com
   facebook: https://www.facebook.com/zihcian0405/
-  twitter: https://twitter.com/god850405
+  twitter: https://twitter.com/marcus850405
   qq: # 1181062873
   weibo: # https://weibo.com/xxx
   zhihu: # https://www.zhihu.com/xxx
@@ -566,8 +566,8 @@ subtitle:
   startDelay: 300 # 开始延迟
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
-  sub1: 對於淩駕命運之上的人來說，信心就是生命的主宰。
-  sub2: For those above the fate, confidence is the master of life.
+  sub1: 信心主宰著命運。
+  sub2: Confidence is the master of life.
 
 # 手机二级菜单.
 navMenu:
