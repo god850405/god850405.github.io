@@ -4,8 +4,8 @@
 
 # Site
 title: MarsBlog
-subtitle: '對於淩駕命運之上的人來說，信心就是生命的主宰。'
-description: 'For those above the fate, confidence is the master of life.'
+subtitle: '信心主宰著命運。'
+description: 'Confidence is the master of life.'
 keywords: Vue,Javascript,C#,HTML5,CSS,MSSQL
 author: Marcus Chen
 language: zh-tw
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://blog.marstudio.tw/
+url: https://god850405.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
