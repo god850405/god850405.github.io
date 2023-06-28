@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MarsBlog</title>
+  
+  <subtitle>信心主宰著命運。</subtitle>
+  <link href="https://god850405.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://god850405.github.io/"/>
+  <updated>2023-06-28T14:58:30.769Z</updated>
+  <id>https://god850405.github.io/</id>
+  
+  <author>
+    <name>Marcus Chen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>靜態網頁免費自動部署</title>
+    <link href="https://god850405.github.io/2022/07/21/2022-07-21/"/>
+    <id>https://god850405.github.io/2022/07/21/2022-07-21/</id>
+    <published>2022-07-21T21:00:00.000Z</published>
+    <updated>2023-06-28T14:58:30.769Z</updated>
+    
+    <content type="html"><![CDATA[<p>繼上篇文章紀錄下「使用微軟內建IIS架設免費站台」，這篇想和大家分享網上免費部署靜態網頁的資源，搭配git還能做到自動化部署。</p><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/">Github</a></h2><p>這篇順便介紹Github，Github是一個開源原始碼代管平台，搭配git做版本控制，個人使用免費。</p><p>拋棄傳統拷貝至usb的方式，每到新的環境（電腦），只要git clone就可以輕鬆把專案複製下來，多人維護共同專案等。還沒有帳號可以先去註冊。</p><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-scm.com/">Git</a></h2><p>還不會使用git的話也不用擔心，現在網上有非常多資源可以學習，而且如果專案都是自己一個人在維護，其實只要學會如何「複製（clone)、提交（commit）、推送（push）」，再搭配小烏龜的中文圖形化介面就不需要打指令。如果想更一步的學習git，可以參考<a href="https://backlog.com/git-tutorial/tw/">連猴子都能懂的Git入門指南</a>。</p><h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a><a href="https://pages.github.com/">Github Pages</a></h2><p>Github 不僅是提供源碼託管，Github Page 更只是眾多服務中的其中一個項目，提供靜態網頁部署，再搭配Github Token、Github Action Secret、Github Action 就可以做到自動化部署。<br>雖然有點繁瑣但其實也沒有很難，可以參考<a href="https://docfunc.com/posts/68/%E4%BD%BF%E7%94%A8-github-action-%E4%BE%86%E5%81%9A%E7%B0%A1%E5%96%AE%E7%9A%84-cicd-post">使用 GitHub Action 來做簡單的 CI/CD</a></p><h2 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a><a href="https://vercel.com/">Vercel</a></h2><ul><li>免費提供部署靜態網頁</li><li>免費帶有SSL的子網域(vercel.app)。<blockquote><p>Vercel的免費帳號是不能有商業行為，如有需要必須購買進階方案。</p></blockquote></li></ul><h2 id="Netlify-推薦"><a href="#Netlify-推薦" class="headerlink" title="Netlify (推薦)"></a><a href="https://www.netlify.com/">Netlify</a> (推薦)</h2><ul><li>免費提供部署靜態網頁，</li><li>免費帶有SSL的子網域（netlify.app)<blockquote><p>Netlify是開放商業行為的（例：購物網站），但是不得轉售Netlify的託管服務。</p></blockquote></li></ul><h2 id="Heroku-推薦"><a href="#Heroku-推薦" class="headerlink" title="Heroku (推薦)"></a><a href="https://www.heroku.com/">Heroku</a> (推薦)</h2><ul><li>除了支援部署靜態網頁，也支援許多語言( .Net, Python, Node.js, Go, PHP …)</li><li>免費帶有SSL的子網域（herokuapp.com)</li><li>參考<a href="https://hackmd.io/@minecola/ryvWBCLCf?type=view">Github 自動部署 heroku</a><blockquote><p>Heroku 還提供許多雲端服務，如:免費的PostgreSql資料庫 <a href="https://ithelp.ithome.com.tw/articles/10271675?sc=iThelpR">建立並操作Heroku PostgreSQL</a></p></blockquote></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;繼上篇文章紀錄下「使用微軟內建IIS架設免費站台」，這篇想和大家分享網上免費部署靜態網頁的資源，搭配git還能做到自動化部署。&lt;/p&gt;
+&lt;h2 id=&quot;Github&quot;&gt;&lt;a href=&quot;#Github&quot; class=&quot;headerlink&quot; title=&quot;Github&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="部署" scheme="https://god850405.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="自動化部署" scheme="https://god850405.github.io/tags/%E8%87%AA%E5%8B%95%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="git" scheme="https://god850405.github.io/tags/git/"/>
+    
+    <category term="github page" scheme="https://god850405.github.io/tags/github-page/"/>
+    
+    <category term="netlify" scheme="https://god850405.github.io/tags/netlify/"/>
+    
+    <category term="vercel" scheme="https://god850405.github.io/tags/vercel/"/>
+    
+    <category term="heroku" scheme="https://god850405.github.io/tags/heroku/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IIS架設網站</title>
+    <link href="https://god850405.github.io/2021/01/20/2021-01-04/"/>
+    <id>https://god850405.github.io/2021/01/20/2021-01-04/</id>
+    <published>2021-01-20T21:34:47.000Z</published>
+    <updated>2023-06-28T14:58:30.769Z</updated>
+    
+    <content type="html"><![CDATA[<p>差不多在一個月前開始看影片( <a href="https://youtube.com/playlist?list=PLEfh-m_KG4dYor8h4Hi2lqKJ0xqNTFh16">Vue.js 手牽手，一起嗑光全家桶</a> ) 自學 Vue.js 撰寫網頁，也同時學習使用 .Net 撰寫後端 API。不知道大家是否跟我一樣，辛辛苦苦寫好的一個網站，最期待的是能夠將自己的作品分享給大家，這篇文章將記錄下，如何使用微軟內建的IIS架設網站。</p><h2 id="IIS"><a href="#IIS" class="headerlink" title="IIS"></a>IIS</h2><ul><li><p><a href="https://melayogu.pixnet.net/blog/post/132694142-%5Biis%5D-win10-%E5%AE%89%E8%A3%9Diis">安裝 IIS</a></p></li><li><p><a href="https://www.webdesigns.com.tw/IIS-new-website.asp">新增站台</a></p></li></ul><blockquote><p>部署 .Net 可能會遇到的問題</p></blockquote><ul><li><p>檢查是否有安裝 <a href="https://docs.microsoft.com/zh-tw/aspnet/core/host-and-deploy/iis/hosting-bundle?view=aspnetcore-6.0">.NET Core 主控套件組合</a></p></li><li><p>如果程式碼確定無誤還是無法正常連線，可以嘗試檢查 <a href="https://docs.microsoft.com/zh-tw/aspnet/core/host-and-deploy/iis/web-config?view=aspnetcore-6.0">web.config</a> 有沒有設定好</p></li></ul><h2 id="開放外網連線"><a href="#開放外網連線" class="headerlink" title="開放外網連線"></a>開放外網連線</h2><ul><li>  必須擁有<strong>乙個固定 IP</strong> <a href="https://free.com.tw/hinet-static-ip/">中華電信 HiNet 固定 IP 申請教學</a></li><li>  設定路由器<a href="https://totolink.tw/faq/5009">設定教學</a></li><li>  <strong><a href="https://wiki.mcneel.com/zh-tw/zoo/window7firewall">通訊埠轉發Port Forwarding</a></strong></li><li>  防火牆增加<strong>輸入規則</strong> ( 網站使用的埠號 ) <a href="https://wiki.mcneel.com/zh-tw/zoo/window7firewall">從 Windows 防火牆開啟 TCP Port 80</a></li></ul><h2 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h2><ul><li><p>申請SSL必須擁有自己的網域</p></li><li><p>如需申請網域個人推薦Gandi，<a href="https://frankknow.com/gandi-tutorial/">Gandi 網域教學</a></p></li></ul><blockquote><p>如果已經擁有自己的網域可以安裝免費SSL</p></blockquote><ul><li><p><a href="https://blog.johnwu.cc/article/ssl-for-free.html">申請免費SSL</a></p></li><li><p><a href="https://blog.johnwu.cc/article/iis-install-ssl-certificate.html">IIS - 安裝 SSL 憑證</a></p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;差不多在一個月前開始看影片( &lt;a href=&quot;https://youtube.com/playlist?list=PLEfh-m_KG4dYor8h4Hi2lqKJ0xqNTFh16&quot;&gt;Vue.js 手牽手，一起嗑光全家桶&lt;/a&gt; ) 自學 Vue.js 撰寫網頁，也同時</summary>
+      
+    
+    
+    
+    <category term="部署" scheme="https://god850405.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="IIS" scheme="https://god850405.github.io/tags/IIS/"/>
+    
+    <category term="SSL" scheme="https://god850405.github.io/tags/SSL/"/>
+    
+  </entry>
+  
+</feed>
